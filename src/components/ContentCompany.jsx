@@ -60,8 +60,8 @@ const ContentCompany = () => {
     return (
         <div className="my-32">
             <section className="flex flex-col justify-center items-center gap-6 pt-20">
-                <h1 className="text-4xl font-bold">I am a good Employee</h1>
-                <div className="w-96 text-sm text-center">
+                <h1 className="text-4xl md:text-5xl font-semi-bold">I am a good Employee</h1>
+                <div className="w-96 text-sm font-bold text-center">
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ipsam
                         voluptas quos voluptates corporis dolores velit commodi, sed iusto
@@ -78,7 +78,7 @@ const ContentCompany = () => {
                             className="flex flex-col justify-center items-center text-center w-1/2 mx-auto rounded-lg shadow-md"
                         >
                             <div className="flex flex-col gap-5 px-10 py-4">
-                                <p className="text-sm text-blue-300">{testimonial.text}</p>
+                                <p className="md:text-lg text-sm text-blue-300">{testimonial.text}</p>
                                 <h3 className="font-bold">{testimonial.author}</h3>
                             </div>
                         </div>

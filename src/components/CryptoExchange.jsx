@@ -4,7 +4,7 @@ const CryptoExchange = () => {
     return (
         <div>
             <section className="w-full text-start flex flex-col gap-4">
-                <h1 className="text-4xl font-bold">Market Making for Crypto Exchanges</h1>
+                <h1 className="text-3xl md:text-4xl font-semi-bold">Market Making for Crypto Exchanges</h1>
                 <div className="w-96 text-lg ">
                     <p>Attract more traders and projects with deep order books & liquidity</p>
                 </div>
