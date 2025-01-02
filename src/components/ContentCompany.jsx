@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "motion/react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -58,8 +59,13 @@ const ContentCompany = () => {
     };
 
     return (
-        <div className="my-32">
-            <section className="flex flex-col justify-center items-center gap-6 pt-20">
+        <motion.div
+            initial={{ opacity: 0, y: -60 }}  // เริ่มต้นที่ opacity 0 และ y 50
+            whileInView={{ opacity: 1, y: 0 }}  // เมื่อข้อความเข้าสู่ viewport จะค่อยๆ ขึ้น
+            transition={{ duration: 2 }}  // ระยะเวลาในการแอนิเมชั่น
+            viewport={{ once: true, amount: 0.35 }}
+            className="my-32">
+            <section className="relative flex flex-col justify-center items-center gap-6 pt-20">
                 <h1 className="text-4xl md:text-5xl font-semi-bold">I am a good Employee</h1>
                 <div className="w-96 text-sm font-bold text-center">
                     <p>
@@ -68,6 +74,20 @@ const ContentCompany = () => {
                         fuga molestias laboriosam nostrum qui.
                     </p>
                 </div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                        opacity: [0, 1, 0],
+                        x: [-800, -200],
+                    }}
+                    transition={{
+                        duration: 6,
+                        ease: "linear",
+                        repeat: Infinity,
+                        repeatType: "loop",
+                    }}
+                    className="absolute w-60 h-60 bg-custom-gradient rounded-full blur-2xl bottom-10 center right-10">
+                </motion.div>
             </section>
 
             <div className="flex justify-center items-center w-full text-white">
@@ -85,7 +105,7 @@ const ContentCompany = () => {
                     ))}
                 </Slider>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

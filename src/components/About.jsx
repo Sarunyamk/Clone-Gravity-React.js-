@@ -1,3 +1,6 @@
+
+import { motion } from "motion/react"
+
 const About = () => {
 
     const card = [
@@ -36,29 +39,44 @@ const About = () => {
     ]
     return (
         <div>
-            <section className="flex flex-col justify-center items-center gap-6 py-20">
-                <h1 className="text-4xl md:text-5xl font-semi-bold">About Gravity Team</h1>
-                <div className="w-96 text-sm text-center">
-                    <p>At Gravity Team, we are on the mission to balance the supply and demand across crypto markets worldwide. We are a crypto native market maker founded by traders, developers, and innovators who are strong believers and supporters of the future of decentralization and digital assets.</p>
-                </div>
-            </section>
-            <section>
-                <div class="grid grid-cols-1 md:grid-cols-4 p-8 text-white  text-center mx-10 md:mx-24 lg:mx-28">
+            <motion.div
+                initial={{ opacity: 0, y: -60 }}  // เริ่มต้นที่ opacity 0 และ y 50
+                whileInView={{ opacity: 1, y: 0 }}  // เมื่อข้อความเข้าสู่ viewport จะค่อยๆ ขึ้น
+                transition={{ duration: 2 }}  // ระยะเวลาในการแอนิเมชั่น
+                viewport={{ once: true, amount: 0.35 }} // เลื่อนมาถึง 20% ของข้อความให้แสดง
+            >
 
-                    {
-                        card.map((item, index) => {
-                            return (
-                                <div class="custom-card-about border hover:bg-custom-gradient" key={index}>
-                                    <span class="text-lg md:text-xl">{item.title}</span>
-                                    <p class="text-sm md:text-lg ">{item.content}</p>
-                                </div>
-                            )
-                        })
-                    }
+                <section className="flex flex-col justify-center items-center gap-6 py-20">
+                    <h1 className="text-4xl md:text-5xl font-semi-bold">About Gravity Team</h1>
+                    <div className="w-96 text-sm text-center">
+                        <p>At Gravity Team, we are on the mission to balance the supply and demand across crypto markets worldwide. We are a crypto native market maker founded by traders, developers, and innovators who are strong believers and supporters of the future of decentralization and digital assets.</p>
+                    </div>
+                </section>
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0, y: -60 }}  // เริ่มต้นที่ opacity 0 และ y 50
+                whileInView={{ opacity: 1, y: 0 }}  // เมื่อข้อความเข้าสู่ viewport จะค่อยๆ ขึ้น
+                transition={{ duration: 2 }}  // ระยะเวลาในการแอนิเมชั่น
+                viewport={{ once: true, amount: 0.35 }} // เลื่อนมาถึง 20% ของข้อความให้แสดง
+            >
+                <section>
+                    <div class="grid grid-cols-1 md:grid-cols-4 p-8 text-white  text-center mx-10 md:mx-24 lg:mx-28">
 
-                </div>
+                        {
+                            card.map((item, index) => {
+                                return (
+                                    <div class="custom-card-about border hover:bg-custom-gradient" key={index}>
+                                        <span class="text-lg md:text-xl">{item.title}</span>
+                                        <p class="text-sm md:text-lg ">{item.content}</p>
+                                    </div>
+                                )
+                            })
+                        }
 
-            </section>
+                    </div>
+
+                </section>
+            </motion.div>
         </div>
     )
 }

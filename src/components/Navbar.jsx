@@ -1,4 +1,5 @@
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
+import { TiThMenu } from "react-icons/ti";
 
 const Navbar = () => {
     return (
@@ -7,7 +8,7 @@ const Navbar = () => {
                 <div  >
                     <a href='/' className='w-44 h-10 text-2xl font-bold'> CloneGravity</a>
                 </div>
-                <div className='flex gap-10'>
+                <div className='hidden md:flex gap-10 uppercase'>
                     <a href='/' className='hover:text-blue-600 duration-300'>
                         About us
                     </a>
@@ -36,7 +37,7 @@ const Navbar = () => {
                     </a>
                 </div>
 
-                <div className='uppercase relative cursor-pointer group '>
+                <div className='uppercase relative cursor-pointer group hidden md:flex'>
                     Get in touch
                     <div className='absolute top-2 -left-6 w-3 h-3 bg-custom-gradient rounded-full'></div>
                     <div className='absolute text-sm top-10 -left-10 w-48 bg-[#242529]  p-4 rounded-md shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500'>
@@ -48,6 +49,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                 </div>
+                <TiThMenu className='md:hidden' />
 
             </nav>
         </div>
